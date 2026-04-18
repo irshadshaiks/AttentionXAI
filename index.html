@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AttentionX AI — Turn Long Videos Into Viral Clips</title>
+  <meta name="description" content="AttentionX AI uses Gemini, Whisper & MediaPipe to automatically transform your long-form videos into scroll-stopping viral short clips for Instagram Reels, YouTube Shorts & TikTok." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════════════════════════ -->
+<nav class="nav" id="main-nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" id="nav-logo">
+      <span class="logo-icon">⚡</span>
+      <span>AttentionX <span class="logo-ai">AI</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#workflow">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#demo">Demo</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" onclick="openLoginModal()">Log in</button>
+      <button class="btn btn-primary" onclick="openLoginModal()" id="nav-cta">Start Free</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#features" onclick="toggleMobile()">Features</a>
+    <a href="#workflow" onclick="toggleMobile()">How It Works</a>
+    <a href="#pricing" onclick="toggleMobile()">Pricing</a>
+    <button class="btn btn-primary" onclick="openLoginModal();toggleMobile()">Get Started Free</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     LANDING PAGE
+═══════════════════════════════════════════════════════════════ -->
+<div id="landing-page">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span>🔥 Now with Gemini 1.5 Flash — Virality AI</span>
+    </div>
+    <h1 class="hero-title">
+      Turn 1 Long Video Into<br/>
+      <span class="gradient-text">10 Viral Clips</span> in Minutes
+    </h1>
+    <p class="hero-subtitle">
+      AttentionX AI uses multimodal AI to find your golden moments,
+      convert them to scroll-stopping 9:16 vertical clips, and generate
+      karaoke captions — all automatically.
+    </p>
+    <div class="hero-cta">
+      <button class="btn btn-primary btn-lg" onclick="openLoginModal()" id="hero-cta-btn">
+        <span>🚀 Start Repurposing Free</span>
+      </button>
+      <button class="btn btn-outline btn-lg" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">
+        <span>▶ Watch Demo</span>
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <strong>10x</strong><span>Faster than manual editing</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <strong>98%</strong><span>Virality score accuracy</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <strong>3 min</strong><span>Average processing time</span>
+      </div>
+    </div>
+  </div>
+  <!-- Hero visual -->
+  <div class="hero-visual">
+    <div class="phone-mockup" id="phone-mockup">
+      <div class="phone-screen">
+        <div class="phone-video">
+          <div class="phone-caption-demo" id="caption-demo">
+            <span class="caption-word active">Your</span>
+            <span class="caption-word">mindset</span>
+            <span class="caption-word">is</span>
+            <span class="caption-word">your</span>
+            <span class="caption-word">greatest</span>
+            <span class="caption-word">asset</span>
+            <span class="caption-word">🔥</span>
+          </div>
+          <div class="phone-score-badge">🔥 94% Viral</div>
+        </div>
+      </div>
+    </div>
+    <div class="floating-card fc-1">⚡ Energy Peak Detected</div>
+    <div class="floating-card fc-2">🎯 Hook Generated</div>
+    <div class="floating-card fc-3">📱 9:16 Ready</div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF STRIP -->
+<section class="social-strip">
+  <div class="container">
+    <p class="strip-label">Trusted by creators at</p>
+    <div class="brand-logos">
+      <span>YouTube</span><span>Instagram</span><span>TikTok</span>
+      <span>LinkedIn</span><span>Spotify</span><span>Substack</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features section" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">✨ Core Features</div>
+      <h2 class="section-title">Everything You Need to Go Viral</h2>
+      <p class="section-sub">From upload to ready-to-post — fully automated, endlessly customizable.</p>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card feat-large" id="feat-upload">
+        <div class="feat-icon">🎥</div>
+        <h3>Smart Video Upload</h3>
+        <p>Drag & drop MP4, MOV, AVI — up to 500MB. Real-time upload progress with instant preview. Secure local & cloud storage.</p>
+        <div class="feat-tags"><span>MP4</span><span>MOV</span><span>AVI</span><span>WebM</span></div>
+      </div>
+
+      <div class="feature-card" id="feat-ai">
+        <div class="feat-icon">🧠</div>
+        <h3>Emotional Peak Detection</h3>
+        <p>Librosa audio energy + Gemini sentiment analysis identifies your highest-impact moments automatically.</p>
+        <div class="feat-pill">Powered by Gemini 1.5</div>
+      </div>
+
+      <div class="feature-card" id="feat-clips">
+        <div class="feat-icon">✂️</div>
+        <h3>Auto Clip Generation</h3>
+        <p>30–60 second clips extracted and ranked by virality score. Preview and fine-tune start/end times.</p>
+      </div>
+
+      <div class="feature-card" id="feat-vertical">
+        <div class="feat-icon">📱</div>
+        <h3>Smart Vertical Crop</h3>
+        <p>MediaPipe face tracking ensures the speaker stays perfectly centered in every 9:16 frame — zero awkward cuts.</p>
+        <div class="feat-pill">Face Tracking</div>
+      </div>
+
+      <div class="feature-card" id="feat-captions">
+        <div class="feat-icon">📝</div>
+        <h3>Karaoke Captions</h3>
+        <p>Whisper speech-to-text generates word-by-word timed captions with Netflix, YouTube, and TikTok themes.</p>
+        <div class="feat-tags"><span>Netflix</span><span>YouTube</span><span>TikTok</span></div>
+      </div>
+
+      <div class="feature-card feat-large" id="feat-hooks">
+        <div class="feat-icon">🎯</div>
+        <h3>Viral Hook Generator</h3>
+        <p>Gemini crafts scroll-stopping hook titles with proven psychological triggers — curiosity, urgency, social proof.</p>
+        <div class="hook-examples">
+          <div class="hook-ex">"This mindset shift will change your life 🔥"</div>
+          <div class="hook-ex">"Nobody talks about this success secret 👀"</div>
+          <div class="hook-ex">"Stop making this productivity mistake ⚠️"</div>
+        </div>
+      </div>
+
+      <div class="feature-card" id="feat-virality">
+        <div class="feat-icon">🔥</div>
+        <h3>Virality Score AI</h3>
+        <p>Predicts engagement using energy, sentiment, topic trends, and optimal clip duration — before you post.</p>
+        <div class="virality-bar-demo">
+          <div class="vb-fill" style="width:87%"></div>
+          <span>87%</span>
+        </div>
+      </div>
+
+      <div class="feature-card" id="feat-export">
+        <div class="feat-icon">🚀</div>
+        <h3>One-Click Export</h3>
+        <p>Download in Reels, Shorts, or TikTok format. Share directly to your platforms with a single click.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="workflow section" id="workflow">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">⚡ Workflow</div>
+      <h2 class="section-title">From Upload to Viral in 4 Steps</h2>
+    </div>
+    <div class="steps-container">
+      <div class="step-line"></div>
+      <div class="steps-grid">
+        <div class="step-card" id="step-1">
+          <div class="step-number">01</div>
+          <div class="step-icon">📤</div>
+          <h3>Upload Your Video</h3>
+          <p>Drop your long-form video (up to 500MB). MP4, MOV, AVI supported.</p>
+        </div>
+        <div class="step-card" id="step-2">
+          <div class="step-number">02</div>
+          <div class="step-icon">🧠</div>
+          <h3>AI Finds Golden Moments</h3>
+          <p>Gemini + Librosa scan for emotional peaks, high-energy moments, and insightful quotes.</p>
+        </div>
+        <div class="step-card" id="step-3">
+          <div class="step-number">03</div>
+          <div class="step-icon">🎬</div>
+          <h3>Preview & Customise</h3>
+          <p>Review ranked clips, edit captions, choose themes, and regenerate hooks.</p>
+        </div>
+        <div class="step-card" id="step-4">
+          <div class="step-number">04</div>
+          <div class="step-icon">🚀</div>
+          <h3>Export & Share</h3>
+          <p>Download in Reels/Shorts format or share directly to your social platforms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO SECTION -->
+<section class="demo-section section" id="demo">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">🎬 Live Demo</div>
+      <h2 class="section-title">See AttentionX AI in Action</h2>
+      <p class="section-sub">No video needed — try the interactive demo below.</p>
+    </div>
+    <div class="demo-box">
+      <div class="demo-tabs" id="demo-tabs">
+        <button class="demo-tab active" data-tab="upload">📤 Upload</button>
+        <button class="demo-tab" data-tab="analyze">🧠 Analyze</button>
+        <button class="demo-tab" data-tab="preview">🎬 Preview</button>
+        <button class="demo-tab" data-tab="export">🚀 Export</button>
+      </div>
+      <div class="demo-content">
+        <!-- Upload tab -->
+        <div class="demo-panel active" id="panel-upload">
+          <div class="demo-upload-zone" id="demo-upload-zone">
+            <div class="upload-icon">🎥</div>
+            <h3>Try the Real App</h3>
+            <p>Upload a real video to see AttentionX in action.</p>
+            <button class="btn btn-primary" onclick="openLoginModal()">Start Real Upload (Login)</button>
+            <div class="demo-progress" id="demo-progress" style="display:none">
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" id="demo-prog-bar"></div>
+              </div>
+              <span id="demo-prog-text">0%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Analyze tab -->
+        <div class="demo-panel" id="panel-analyze">
+          <div class="analyze-demo">
+            <div class="analyze-steps">
+              <div class="a-step done" id="as-1">✅ Audio energy analysis (Librosa)</div>
+              <div class="a-step done" id="as-2">✅ Sentiment detection (Gemini 1.5)</div>
+              <div class="a-step done" id="as-3">✅ Face tracking (MediaPipe)</div>
+              <div class="a-step done" id="as-4">✅ Virality score computed</div>
+              <div class="a-step pulsing" id="as-5">⚡ Generating hook titles...</div>
+            </div>
+            <div class="detect-visual">
+              <div class="waveform" id="waveform">
+                <div class="wave-bars" id="wave-bars"></div>
+              </div>
+              <div class="peak-markers" id="peak-markers"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Preview tab -->
+        <div class="demo-panel" id="panel-preview">
+          <div class="clips-preview" id="clips-preview"></div>
+        </div>
+        <!-- Export tab -->
+        <div class="demo-panel" id="panel-export">
+          <div class="export-demo">
+            <div class="export-formats">
+              <div class="ef-card active" onclick="selectFormat(this,'reels')">
+                <span class="ef-icon">📸</span>
+                <strong>Instagram Reels</strong>
+                <span>9:16 · 1080×1920</span>
+              </div>
+              <div class="ef-card" onclick="selectFormat(this,'shorts')">
+                <span class="ef-icon">▶️</span>
+                <strong>YouTube Shorts</strong>
+                <span>9:16 · 1080×1920</span>
+              </div>
+              <div class="ef-card" onclick="selectFormat(this,'tiktok')">
+                <span class="ef-icon">🎵</span>
+                <strong>TikTok</strong>
+                <span>9:16 · 1080×1920</span>
+              </div>
+            </div>
+            <div class="caption-themes">
+              <p class="theme-label">Caption Theme:</p>
+              <div class="theme-options" id="theme-options">
+                <button class="theme-btn active netflix" onclick="selectTheme(this,'netflix')">Netflix</button>
+                <button class="theme-btn youtube" onclick="selectTheme(this,'youtube')">YouTube</button>
+                <button class="theme-btn tiktok" onclick="selectTheme(this,'tiktok')">TikTok</button>
+                <button class="theme-btn minimal" onclick="selectTheme(this,'minimal')">Minimal</button>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-lg" onclick="simulateExport()" id="export-btn">
+              🚀 Export Viral Clip
+            </button>
+            <div class="export-success" id="export-success" style="display:none">
+              <div class="success-icon">✅</div>
+              <h3>Clip Ready!</h3>
+              <p>Your viral clip is ready to download</p>
+              <div class="export-links">
+                <button class="btn btn-primary">⬇ Download MP4</button>
+                <button class="btn btn-outline" onclick="showSection('app')">Open in App</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">💎 Pricing</div>
+      <h2 class="section-title">Simple, Creator-Friendly Pricing</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card" id="price-free">
+        <div class="price-tier">Free</div>
+        <div class="price-amount"><span>$0</span><small>/mo</small></div>
+        <ul class="price-features">
+          <li>✅ 3 videos/month</li>
+          <li>✅ 5 clips per video</li>
+          <li>✅ Basic captions</li>
+          <li>✅ 720p export</li>
+          <li>✅ Watermark</li>
+        </ul>
+        <button class="btn btn-outline" onclick="openLoginModal()">Get Started</button>
+      </div>
+      <div class="price-card featured" id="price-pro">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-tier">Pro</div>
+        <div class="price-amount"><span>$29</span><small>/mo</small></div>
+        <ul class="price-features">
+          <li>✅ Unlimited videos</li>
+          <li>✅ 20 clips per video</li>
+          <li>✅ Karaoke captions</li>
+          <li>✅ 1080p export</li>
+          <li>✅ No watermark</li>
+          <li>✅ Gemini hook generator</li>
+          <li>✅ Virality AI scoring</li>
+        </ul>
+        <button class="btn btn-primary" onclick="openLoginModal()">Start Pro Trial</button>
+      </div>
+      <div class="price-card" id="price-team">
+        <div class="price-tier">Agency</div>
+        <div class="price-amount"><span>$99</span><small>/mo</small></div>
+        <ul class="price-features">
+          <li>✅ Everything in Pro</li>
+          <li>✅ 5 team seats</li>
+          <li>✅ Batch processing</li>
+          <li>✅ API access</li>
+          <li>✅ Priority support</li>
+          <li>✅ Content calendar AI</li>
+          <li>✅ White-label export</li>
+        </ul>
+        <button class="btn btn-outline" onclick="openLoginModal()">Contact Sales</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">💬 Testimonials</div>
+      <h2 class="section-title">Creators Love AttentionX</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testi-card" id="testi-1">
+        <div class="testi-stars">★★★★★</div>
+        <p>"AttentionX turned my 3-hour masterclass into 12 viral clips in under 5 minutes. My Reels engagement went up 340% in the first week."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c)">SJ</div>
+          <div><strong>Sophia J.</strong><span>Business Coach · 280K followers</span></div>
+        </div>
+      </div>
+      <div class="testi-card" id="testi-2">
+        <div class="testi-stars">★★★★★</div>
+        <p>"The virality score is scarily accurate. Every clip it rated 90%+ actually went viral. It's like having a professional editor who knows the algorithm."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">MR</div>
+          <div><strong>Marcus R.</strong><span>Tech YouTuber · 1.2M subscribers</span></div>
+        </div>
+      </div>
+      <div class="testi-card" id="testi-3">
+        <div class="testi-stars">★★★★★</div>
+        <p>"I was spending 4 hours editing every podcast episode. Now I spend 15 minutes reviewing AttentionX clips. Game changer for solo creators."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">AL</div>
+          <div><strong>Aisha L.</strong><span>Podcast Host · Forbes 30 Under 30</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to 10x Your Content Output?</h2>
+      <p>Join 12,000+ creators turning long videos into viral clips daily.</p>
+      <button class="btn btn-primary btn-lg" onclick="openLoginModal()" id="cta-final">
+        🚀 Start Free — No Credit Card
+      </button>
+    </div>
+    <div class="cta-orbs">
+      <div class="cta-orb c1"></div>
+      <div class="cta-orb c2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-icon">⚡</span> AttentionX <span class="logo-ai">AI</span></div>
+        <p>Intelligent Content Repurposing Platform for Viral Micro-Content</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col"><strong>Product</strong><a href="#">Features</a><a href="#">Pricing</a><a href="#">Changelog</a></div>
+        <div class="fl-col"><strong>Company</strong><a href="#">About</a><a href="#">Blog</a><a href="#">Careers</a></div>
+        <div class="fl-col"><strong>Legal</strong><a href="#">Privacy</a><a href="#">Terms</a><a href="#">GDPR</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 AttentionX AI. Built with ❤️ using Gemini, Whisper & MediaPipe.</span>
+      <div class="social-links">
+        <a href="#">𝕏</a><a href="#">in</a><a href="#">▶</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div><!-- /landing-page -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     APP / DASHBOARD
+═══════════════════════════════════════════════════════════════ -->
+<div id="app-section" style="display:none">
+
+<!-- App Header -->
+<header class="app-header">
+  <div class="app-header-inner">
+    <a href="#" class="logo" onclick="showSection('landing')">
+      <span class="logo-icon">⚡</span>
+      <span>AttentionX <span class="logo-ai">AI</span></span>
+    </a>
+    <nav class="app-nav">
+      <button class="app-nav-btn active" data-view="upload" onclick="switchView('upload',this)">📤 Upload</button>
+      <button class="app-nav-btn" data-view="analyze" onclick="switchView('analyze',this)">🧠 Analyze</button>
+      <button class="app-nav-btn" data-view="clips" onclick="switchView('clips',this)">✂️ Clips</button>
+      <button class="app-nav-btn" data-view="export" onclick="switchView('export',this)">🚀 Export</button>
+      <button class="app-nav-btn" data-view="dashboard" onclick="switchView('dashboard',this)">📊 Dashboard</button>
+    </nav>
+    <div class="app-header-right">
+      <span class="api-indicator" id="api-indicator">● API Ready</span>
+      <button class="btn btn-ghost btn-sm" onclick="showSection('landing')">← Back to Home</button>
+    </div>
+  </div>
+  <!-- Step indicator -->
+  <div class="step-indicator">
+    <div class="si-step active" id="si-upload">
+      <div class="si-dot"></div><span>Upload</span>
+    </div>
+    <div class="si-line"></div>
+    <div class="si-step" id="si-analyze">
+      <div class="si-dot"></div><span>Analyze</span>
+    </div>
+    <div class="si-line"></div>
+    <div class="si-step" id="si-clips">
+      <div class="si-dot"></div><span>Clips</span>
+    </div>
+    <div class="si-line"></div>
+    <div class="si-step" id="si-export-step">
+      <div class="si-dot"></div><span>Export</span>
+    </div>
+  </div>
+</header>
+
+<!-- App Views -->
+<main class="app-main">
+
+  <!-- ── UPLOAD VIEW ─────────────────────────────────────── -->
+  <div class="app-view active" id="view-upload">
+    <div class="view-header">
+      <h1>Upload Your Video</h1>
+      <p>Supports MP4, MOV, AVI, MKV — up to 500MB</p>
+    </div>
+    <div class="upload-area" id="upload-area"
+         ondragover="handleDragOver(event)"
+         ondragleave="handleDragLeave(event)"
+         ondrop="handleDrop(event)">
+      <div class="upload-idle" id="upload-idle">
+        <div class="upload-anim">
+          <div class="upload-circle"></div>
+          <span class="upload-arrow">↑</span>
+        </div>
+        <h2>Drag & Drop your video here</h2>
+        <p>or click to browse files</p>
+        <input type="file" id="file-input" accept=".mp4,.mov,.avi,.mkv,.webm" style="display:none" onchange="handleFileSelect(event)" />
+        <button class="btn btn-primary btn-lg" onclick="document.getElementById('file-input').click()">
+          Choose Video
+        </button>
+      </div>
+      <div class="upload-progress-view" id="upload-progress-view" style="display:none">
+        <div class="upv-icon">🎥</div>
+        <div class="upv-filename" id="upv-filename">video.mp4</div>
+        <div class="upv-size" id="upv-size">0 MB</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar" id="upload-prog-bar"></div>
+        </div>
+        <div class="upv-pct" id="upv-pct">0%</div>
+        <div class="upv-status" id="upv-status">Uploading…</div>
+      </div>
+      <div class="upload-success-view" id="upload-success-view" style="display:none">
+        <div class="usv-check">✅</div>
+        <h2>Upload Complete!</h2>
+        <div class="video-meta-grid" id="video-meta-grid"></div>
+        <button class="btn btn-primary btn-lg" onclick="switchView('analyze', document.querySelector('[data-view=analyze]'))">
+          🧠 Analyze Now →
+        </button>
+      </div>
+    </div>
+    <!-- Recent uploads -->
+    <div class="recent-uploads" id="recent-uploads" style="display:none">
+      <h3>Recent Uploads</h3>
+      <div class="recent-list" id="recent-list"></div>
+    </div>
+  </div>
+
+  <!-- ── ANALYZE VIEW ─────────────────────────────────────── -->
+  <div class="app-view" id="view-analyze">
+    <div class="view-header">
+      <h1>🧠 AI Analysis</h1>
+      <p>Detect emotional peaks, score virality, and generate hooks</p>
+    </div>
+    <div class="analyze-config" id="analyze-config">
+      <div class="config-grid">
+        <div class="config-item">
+          <label>Min Clip Duration</label>
+          <input type="range" id="min-dur" min="15" max="45" value="25" oninput="updateDurLabel(this,'min-dur-val')" />
+          <span id="min-dur-val">25s</span>
+        </div>
+        <div class="config-item">
+          <label>Max Clip Duration</label>
+          <input type="range" id="max-dur" min="30" max="90" value="60" oninput="updateDurLabel(this,'max-dur-val')" />
+          <span id="max-dur-val">60s</span>
+        </div>
+        <div class="config-item">
+          <label>Max Clips</label>
+          <input type="range" id="max-clips" min="3" max="15" value="8" oninput="updateDurLabel(this,'max-clips-val')" />
+          <span id="max-clips-val">8</span>
+        </div>
+        <div class="config-item">
+          <label>Language</label>
+          <select id="lang-sel" class="config-select">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="auto">Auto-detect</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" onclick="startAnalysis()" id="analyze-btn">
+        🚀 Start AI Analysis
+      </button>
+    </div>
+    <div class="analyze-running" id="analyze-running" style="display:none">
+      <div class="ar-header">
+        <div class="spinner"></div>
+        <h2>Analyzing your video…</h2>
+      </div>
+      <div class="ar-steps" id="ar-steps"></div>
+      <div class="ar-waveform">
+        <div class="ar-wave-bars" id="ar-wave-bars"></div>
+      </div>
+    </div>
+    <div class="analyze-results" id="analyze-results" style="display:none">
+      <div class="ar-summary" id="ar-summary"></div>
+      <div class="highlights-list" id="highlights-list"></div>
+      <button class="btn btn-primary btn-lg" onclick="switchView('clips', document.querySelector('[data-view=clips]'))">
+        ✂️ View & Edit Clips →
+      </button>
+    </div>
+    <div class="no-video-msg" id="no-video-msg" style="display:none">
+      <div class="nvm-icon">📤</div>
+      <h3>No video uploaded yet</h3>
+      <p>Upload a video first to begin AI analysis.</p>
+      <button class="btn btn-primary" onclick="switchView('upload', document.querySelector('[data-view=upload]'))">Upload Video</button>
+    </div>
+  </div>
+
+  <!-- ── CLIPS VIEW ─────────────────────────────────────── -->
+  <div class="app-view" id="view-clips">
+    <div class="view-header">
+      <h1>✂️ Clip Editor</h1>
+      <p>Preview, trim, and customize your viral clips</p>
+    </div>
+    <div class="clips-toolbar">
+      <div class="sort-controls">
+        <label>Sort by:</label>
+        <select id="sort-clips" onchange="sortClips(this.value)" class="config-select">
+          <option value="virality">Virality Score</option>
+          <option value="energy">Energy Score</option>
+          <option value="duration">Duration</option>
+        </select>
+      </div>
+      <div class="filter-controls">
+        <button class="filter-btn active" onclick="filterClips('all',this)">All</button>
+        <button class="filter-btn" onclick="filterClips('hot',this)">🔥 Hot (80%+)</button>
+        <button class="filter-btn" onclick="filterClips('medium',this)">⚡ Medium</button>
+      </div>
+    </div>
+    <div class="clips-grid" id="clips-grid">
+      <div class="empty-clips" id="empty-clips">
+        <div class="ec-icon">🧠</div>
+        <h3>No clips yet</h3>
+        <p>Run AI Analysis to find your best moments.</p>
+        <button class="btn btn-primary" onclick="switchView('analyze', document.querySelector('[data-view=analyze]'))">Start Analysis</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EXPORT VIEW ─────────────────────────────────────── -->
+  <div class="app-view" id="view-export">
+    <div class="view-header">
+      <h1>🚀 Export & Share</h1>
+      <p>Export your clips in the perfect format for every platform</p>
+    </div>
+    <div class="export-layout">
+      <div class="export-config-panel">
+        <h3>Export Settings</h3>
+        <div class="ec-section">
+          <label class="ec-label">Platform Format</label>
+          <div class="format-picker" id="format-picker">
+            <div class="fp-item selected" data-format="reels" onclick="pickFormat(this)">
+              <span>📸</span><strong>Reels</strong><small>1080×1920</small>
+            </div>
+            <div class="fp-item" data-format="shorts" onclick="pickFormat(this)">
+              <span>▶️</span><strong>Shorts</strong><small>1080×1920</small>
+            </div>
+            <div class="fp-item" data-format="tiktok" onclick="pickFormat(this)">
+              <span>🎵</span><strong>TikTok</strong><small>1080×1920</small>
+            </div>
+            <div class="fp-item" data-format="square" onclick="pickFormat(this)">
+              <span>⬛</span><strong>Square</strong><small>1080×1080</small>
+            </div>
+          </div>
+        </div>
+        <div class="ec-section">
+          <label class="ec-label">Caption Theme</label>
+          <div class="theme-picker" id="theme-picker">
+            <div class="tp-item selected netflix" data-theme="netflix" onclick="pickTheme(this)">Netflix</div>
+            <div class="tp-item youtube" data-theme="youtube" onclick="pickTheme(this)">YouTube</div>
+            <div class="tp-item tiktok" data-theme="tiktok" onclick="pickTheme(this)">TikTok</div>
+            <div class="tp-item minimal" data-theme="minimal" onclick="pickTheme(this)">Minimal</div>
+          </div>
+        </div>
+        <div class="ec-section">
+          <label class="ec-label">Options</label>
+          <div class="toggle-row">
+            <span>Include Captions</span>
+            <label class="toggle"><input type="checkbox" id="tog-captions" checked /><span class="toggle-slider"></span></label>
+          </div>
+          <div class="toggle-row">
+            <span>Include Hook Title</span>
+            <label class="toggle"><input type="checkbox" id="tog-hook" checked /><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="exportSelected()" id="export-all-btn">
+          🚀 Export Selected Clips
+        </button>
+      </div>
+      <div class="export-clips-panel">
+        <h3>Select Clips to Export</h3>
+        <div class="export-clips-list" id="export-clips-list">
+          <p class="ec-empty">Analyze a video first to see clips here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD VIEW ─────────────────────────────────────── -->
+  <div class="app-view" id="view-dashboard">
+    <div class="view-header">
+      <h1>📊 Analytics Dashboard</h1>
+      <p>Track your content performance and virality trends</p>
+    </div>
+    <div class="dashboard-stats" id="dashboard-stats">
+      <div class="ds-card" id="ds-videos">
+        <div class="ds-icon">🎥</div>
+        <div class="ds-val" id="ds-val-videos">0</div>
+        <div class="ds-label">Videos Processed</div>
+      </div>
+      <div class="ds-card" id="ds-clips">
+        <div class="ds-icon">✂️</div>
+        <div class="ds-val" id="ds-val-clips">0</div>
+        <div class="ds-label">Clips Generated</div>
+      </div>
+      <div class="ds-card" id="ds-virality">
+        <div class="ds-icon">🔥</div>
+        <div class="ds-val" id="ds-val-virality">0%</div>
+        <div class="ds-label">Avg Virality Score</div>
+      </div>
+      <div class="ds-card" id="ds-time">
+        <div class="ds-icon">⏱</div>
+        <div class="ds-val">~3 min</div>
+        <div class="ds-label">Avg Processing Time</div>
+      </div>
+    </div>
+    <div class="dashboard-charts">
+      <div class="chart-card">
+        <h3>Top Topics</h3>
+        <div class="topics-chart" id="topics-chart"></div>
+      </div>
+      <div class="chart-card">
+        <h3>Virality Distribution</h3>
+        <div class="virality-chart" id="virality-chart"></div>
+      </div>
+    </div>
+    <div class="top-clips-section">
+      <h3>🏆 Top Viral Clips</h3>
+      <div class="top-clips-list" id="top-clips-list"></div>
+    </div>
+  </div>
+
+</main>
+</div><!-- /app-section -->
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<!-- CLIP MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+  <div class="modal" id="clip-modal" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-content" id="modal-content"></div>
+  </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="login-overlay" onclick="closeLoginModal()">
+  <div class="modal login-modal" id="login-modal-box" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeLoginModal()">✕</button>
+    <div class="login-header">
+      <h2>Welcome Back</h2>
+      <p>Log in to access your dashboard and create viral clips.</p>
+    </div>
+    <div class="login-form">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="login-email" placeholder="you@example.com" class="login-input" />
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="login-pass" placeholder="••••••••" class="login-input" />
+      </div>
+      <button class="btn btn-primary btn-lg login-btn-sub" onclick="processLogin()">Log In to App 🚀</button>
+      <p class="login-tos">By logging in, you agree to our Terms of Service.</p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
